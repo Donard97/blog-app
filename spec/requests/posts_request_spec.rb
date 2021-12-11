@@ -20,7 +20,7 @@ RSpec.describe 'Posts', type: :request do
     end
   end
 
-  describe 'GET /index' do
+  describe 'GET /show' do
     before(:example) { get('/users/365/posts/10') }
     it 'check status' do
       expect(response).to have_http_status(:ok)
