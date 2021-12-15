@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'rails-controller-testing'
 
+gem 'better_errors', '~> 2.9', '>= 2.9.1'
+
 group :development, :test do
   gem 'rspec-rails', '~> 5.0.0'
 end
