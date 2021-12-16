@@ -31,6 +31,8 @@ gem 'rails-controller-testing'
 
 gem 'better_errors', '~> 2.9', '>= 2.9.1'
 
+gem 'bootstrap-sass'
+
 group :development, :test do
   gem 'rspec-rails', '~> 5.0.0'
 end

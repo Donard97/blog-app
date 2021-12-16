@@ -1,4 +1,10 @@
-<div>
-    <p><strong><%= comment.author.name %></strong></p>
-  <p><strong><%= comment.text %></strong></p>
+<div class="container">
+<div class="row m-4">
+<div class="card bio">
+<div class="card-body d-inline-flex">
+  <p class="comment-author"><%= comment.author.name %></p>
+  <p><%= comment.text %></p>
+</div>
+</div>
+</div>
 </div>
