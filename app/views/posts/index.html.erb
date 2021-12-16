@@ -1,2 +1,4 @@
-<h1>Post of User</h1>
-<p>Here are the post of the user(Id)</p>
+<%= render partial: "users/user_card", object: @user, as: 'user' %>
+<% @posts.each do |post| %>
+<%= render partial: "post_card", object: post, as: 'post' %>
+<% end %>
