@@ -1,2 +1,4 @@
-<h1>Post <%= params[:id] %> by User</h1>
-<p>Here is the post(number) by use(id)</p>
+<%= render partial: "post_card", object: @post, as: 'post' %>
+<% @post.comments.each do |comment| %>
+<%= render partial: "comment_card", object: comment, as: 'comment' %>
+<% end %>
