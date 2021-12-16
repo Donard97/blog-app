@@ -1,2 +1,7 @@
-<h1>Users ID <%= params[:id] %><h1>
-<p>Details of the user</p>
+<%= render partial: "user_card", object: @user, as: 'user' %>
+<p> <%= @user.bio %> </p>
+
+<%  @posts.each  do |post| %>
+<%= render partial: "posts/post_card", object: post, as: 'post' %>
+<% end %>
+<button> See all posts </button>
