@@ -1,12 +1,3 @@
 <%  @users.each  do |user| %>
-<a href="/users/<%= user.id %>" ><div>
-<% if user.photo %>     
-  <img src= <%= user.photo %> /> 
-<% end %>
-<div>
-<p> <%= user.name %></p>
-<p> <%= user.posts_counter %> </p>
-</div>
-</div> 
-</a>
+<%= render partial: "user_card", object: user, as: 'user' %>
 <% end %>
