@@ -1,4 +1,8 @@
 <%= render partial: "users/user_card", object: @user, as: 'user' %>
 <% @posts.each do |post| %>
 <%= render partial: "post_card", object: post, as: 'post' %>
+<% post.comments.each do |comment| %>
+<%= render partial: "comment_card", object: comment, as: 'comment' %>
 <% end %>
+<% end %>
+<button> Pagination </button>
