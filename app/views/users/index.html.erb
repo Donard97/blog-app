@@ -1,2 +1,12 @@
-<h1>All Users</h1>
-<p>Here is a list of all users</p>
+<%  @users.each  do |user| %>
+<a href="/users/<%= user.id %>" ><div>
+<% if user.photo %>     
+  <img src= <%= user.photo %> /> 
+<% end %>
+<div>
+<p> <%= user.name %></p>
+<p> <%= user.posts_counter %> </p>
+</div>
+</div> 
+</a>
+<% end %>
