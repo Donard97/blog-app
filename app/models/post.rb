@@ -7,7 +7,6 @@ class Post < ApplicationRecord
   validates :comments_counter, numericality: { only_ineger: true, geater_than_or_equal_to: 0 }
   validates :likes_counter, numericality: { only_ineger: true, geater_than_or_equal_to: 0 }
 
-
   def update_post_counter
     user.increment!(:posts_counter)
   end
