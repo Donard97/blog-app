@@ -10,11 +10,11 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    # @post = Post.new
   end
 
   def create
-    @post = Post.new(params[:id])
+    @post = Post.new
     @post.title = params[:title]
     @post.text = params[:text]
     @post.author_id = current_user.id
