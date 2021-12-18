@@ -8,7 +8,7 @@
 </div>
 </div>
 </div>
-<%  @posts.each  do |post| %>
+<%  @user.posts.each  do |post| %>
 <%= render partial: "posts/post_card", object: post, as: 'post' %>
 <% end %>
 <div class="container">
