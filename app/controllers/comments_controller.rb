@@ -1,17 +1,24 @@
 class CommentsController < ApplicationController
   skip_before_action :verify_authenticity_token
-  def create
-    @post = Post.find(params[:post_id])
-    @comment = @post.comments.create(text: params[:text], author_id: current_user.id, post_id: @post.id)
+  def new
+    @comment = Comment.new
+  end
 
-    respond_to do |format|
-      format.html do
-        if @comment.save
-          redirect_to user_post_path(@post.author.id, @post.id), notice: 'Comment created successfully'
-        else
-          redirect_to user_post_path(@post.author.id, @post.id), alert: 'Comment not created, try again!'
-        end
-      end
+  def create
+    @comment = Comment.new(comment_params)
+    @comment.author_id = current_user.id
+    @comment.post_id = params[:post_id]
+    if @comment.save
+      flash[:notice] = 'Comment successfully added!'
+      redirect_to user_posts_path(current_user)
+    else
+      render :new
     end
+  end
+
+  private
+
+  def comment_params
+    params.permit(:text)
   end
 end
