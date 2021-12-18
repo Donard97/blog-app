@@ -1,12 +1,12 @@
 class PostsController < ApplicationController
   skip_before_action :verify_authenticity_token
   def index
-    @user = current_user
-    @posts = Post.order(created_at: :desc).where(author_id: current_user.id)
+    @user = User.includes(:posts).find(params[:user_id])
   end
 
   def show
-    @post = Post.find(params[:id])
+    @user = User.find(params[:user_id])
+    @posts = @user.posts.includes(:comments, :likes).find(params[:id])
   end
 
   def new
