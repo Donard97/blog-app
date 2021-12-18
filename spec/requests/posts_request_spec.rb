@@ -15,8 +15,5 @@ RSpec.describe 'Posts', type: :request do
     it 'renders correct template' do
       expect(response).to_not render_template('index')
     end
-
   end
-
-  
 end

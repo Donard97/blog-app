@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 
   def show
     @user = User.find(params[:user_id])
-    @posts = @user.posts.includes(:comments, :likes).find(params[:id])
+    @post = @user.posts.includes(:comments, :likes).find(params[:id])
   end
 
   def new
