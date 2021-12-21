@@ -33,6 +33,8 @@ gem 'better_errors', '~> 2.9', '>= 2.9.1'
 
 gem 'bootstrap-sass'
 
+gem "bootstrap_form", "~> 5.0"
+
 gem 'prettier'
 
 gem 'devise'
