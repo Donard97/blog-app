@@ -1,0 +1,50 @@
+<div class="container">
+<h2 class="text-center">Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= f.hidden_field :posts_counter, value: 0 %>
+
+  <div class="card form">
+  <div class="card-body">
+
+  <div class="mb-3">
+    <%= f.label :name, { class: "form-label"} %><br />
+    <%= f.text_field :name, { class: "form-control", placeholder: "Please add your name" }  %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :surname, { class: "form-label"} %><br />
+    <%= f.text_field :surname, { class: "form-control", placeholder: "Please add your surname" } %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :email, { class: "form-label"} %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Please add your email"  %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :password, { class: "form-label"} %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "Please add your password" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :password_confirmation, { class: "form-label"} %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "Please confirm your password" %>
+  </div>
+
+  <div class="text-center">
+    <%= f.submit "Sign up", class: "btn btn-primary "  %>
+  </div>
+
+  </div>
+</div>
+
+<% end %>
+<div class="text-center">
+<%= render "devise/shared/links"%>
+</div>  
+</div>  
