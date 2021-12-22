@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   def index
     if current_user
       @users = User.all
-    else 
+    else
       redirect_to user_session_path
     end
   end
