@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   skip_before_action :verify_authenticity_token
+  load_and_authorize_resource 
   def index
     @user = User.includes(:posts).find(params[:user_id])
   end
@@ -28,7 +29,6 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    authorize! :destroy, @post
     @post.destroy
     flash[:success] = 'Post was successfully created.'
     redirect_to user_post_path(current_user)
