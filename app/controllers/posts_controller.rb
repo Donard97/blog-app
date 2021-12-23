@@ -31,7 +31,7 @@ class PostsController < ApplicationController
     authorize! :destroy, @post
     @post.destroy
     flash[:success] = 'Post was successfully created.'
-    redirect_to user_posts_path(current_user.id)
+    redirect_to user_post_path(current_user)
   end
 
 end

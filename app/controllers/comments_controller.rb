@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
     authorize! :destroy, @comment
     @comment.destroy
     flash[:succes] = 'Comment was deleted successfully'
-    redirect_to user_posts_path(current_user.id, params[:id])
+    redirect_to user_post_path(current_user)
   end
 
   private

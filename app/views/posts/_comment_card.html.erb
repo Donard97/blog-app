@@ -5,13 +5,15 @@
   <p class="comment-author"><%= comment.author.name %></p>
   <p><%= comment.text %></p>
 </div>
-<%if can? :destroy, comment%>
-<%= link_to user_post_path(@user.id, @post.id), method: :delete do %>
-    <button>
-      Delete
+<div class="c-btn">
+  <%if can? :destroy, comment%>
+  <%= link_to user_post_path(@user.id, @post.id), method: :delete do %>
+    <button class="btn btn-primary comment-btn" >
+    Delete
     </button>
-<%end%>
-<%end%>
+  <%end%>
+  <%end%>
+</div>
 </div>
 </div>
 </div>

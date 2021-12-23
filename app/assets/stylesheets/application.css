@@ -71,3 +71,14 @@ a {
   width: 70%;
   margin: auto;
 }
+
+.post-btn {
+  padding: 3px 10px;
+  margin: 5px;
+}
+
+.comment-btn {
+  float: right;
+  padding: 3px 10px;
+  margin: 5px;
+}

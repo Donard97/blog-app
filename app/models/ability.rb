@@ -12,11 +12,11 @@ class Ability
       else
         can :read, :all
         can :destroy , Comment do |comment|
-          comment.author.id = user.id
+          comment.author_id == user.id
         end
 
         can :destroy, Post do |post|
-          post.author.id = user.id
+          post.author_id == user.id
         end
       end
     
