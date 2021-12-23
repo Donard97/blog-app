@@ -4,3 +4,8 @@
 <% end %>
 <%= render partial: "comments/new_comment" %>
 
+<%if can? :destroy, @post%>
+  <button>
+    <%=link_to "Delete", @post, method: :delete%> 
+  </button>
+<%end%>
