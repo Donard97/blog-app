@@ -39,6 +39,8 @@ gem 'prettier'
 
 gem 'devise'
 
+gem 'cancancan'
+
 group :development, :test do
   gem 'rspec-rails', '~> 5.0.0'
 end
