@@ -25,4 +25,12 @@ class PostsController < ApplicationController
       render 'new'
     end
   end
+
+  def destroy
+    @post = Post.find(params[:id])
+    authorize! :destroy, @post
+    @post.destroy
+    flash[:success] = 'Post was successfully created.'
+    redirect_to user_post_path(current_user)
+  end
 end
