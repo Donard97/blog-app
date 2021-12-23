@@ -33,5 +33,4 @@ class PostsController < ApplicationController
     flash[:success] = 'Post was successfully created.'
     redirect_to user_post_path(current_user)
   end
-
 end
