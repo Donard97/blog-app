@@ -42,8 +42,8 @@ gem 'devise'
 gem 'cancancan'
 
 group :development, :test do
+  gem 'database_cleaner'
   gem 'rspec-rails', '~> 5.0.0'
-  gem "database_cleaner"
 end
 
 group :development, :test do
