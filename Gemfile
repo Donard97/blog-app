@@ -49,6 +49,8 @@ gem 'bcrypt'
 
 gem 'jwt'
 
+gem 'rack-cors'
+
 group :development, :test do
   gem 'database_cleaner'
   gem 'rspec-rails', '~> 5.0.0'
