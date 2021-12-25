@@ -1,8 +1,8 @@
 class Api::CommentsController < ApplicationController
   load_and_authorize_resource
   def index
-      @comment = Comment.where({post_id: params[:post_id]})
-      render json: { success: true, message: 'Loaded all comments', data: { comment: @comment } }
+    @comment = Comment.where({ post_id: params[:post_id] })
+    render json: { success: true, message: 'Loaded all comments', data: { comment: @comment } }
   end
 
   def create
