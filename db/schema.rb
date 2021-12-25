@@ -25,15 +25,10 @@ ActiveRecord::Schema.define(version: 2021_12_25_201338) do
     t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
-  create_table "jwt_denylist", force: :cascade do |t|
+  create_table "jwt_denylists", force: :cascade do |t|
     t.string "jti", null: false
     t.datetime "exp", null: false
-    t.index ["jti"], name: "index_jwt_denylist_on_jti"
-  end
-
-  create_table "jwt_denylists", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.index ["jti"], name: "index_jwt_denylists_on_jti"
   end
 
   create_table "likes", force: :cascade do |t|
