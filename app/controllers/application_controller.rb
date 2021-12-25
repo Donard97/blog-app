@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
+  protect_from_forgery prepend: true
 
   before_action :update_allowed_parameters, if: :devise_controller?
+  before_action :authenticate_user!
 
   protected
 
