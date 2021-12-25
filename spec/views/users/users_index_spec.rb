@@ -1,5 +1,4 @@
 require 'rails_helper'
-# rubocop:disable Layout/LineLength
 RSpec.feature 'Users Page' do
   feature 'shows users' do
     background do
@@ -31,4 +30,3 @@ RSpec.feature 'Users Page' do
     end
   end
 end
-# rubocop:enable Layout/LineLength

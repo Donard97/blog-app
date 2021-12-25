@@ -1,6 +1,5 @@
 require 'rails_helper'
 # rubocop:disable Metrics/BlockLength
-# rubocop:disable Layout/LineLength
 RSpec.feature 'User #Show', type: :feature do
   background do
     visit new_user_session_path
@@ -46,4 +45,3 @@ RSpec.feature 'User #Show', type: :feature do
   end
 end
 # rubocop:enable Metrics/BlockLength
-# rubocop:enable Layout/LineLength
