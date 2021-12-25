@@ -47,5 +47,5 @@ RSpec.describe "posts/index.html.erb", type: :feature do
 
     it 'I should see how many likes a post has' do
       expect(page).to have_content "Likes: 0"
-    end
+   end
 end
