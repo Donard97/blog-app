@@ -1,0 +1,1 @@
+# Write posts index tests
