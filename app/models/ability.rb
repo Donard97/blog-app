@@ -8,14 +8,9 @@ class Ability
     if user.role == 'admin'
       can :manage, :all
     else
+      can :manage, Post, author: user
+      can :manage, Comment, author: user
       can :read, :all
-      can :destroy, Comment do |comment|
-        comment.author_id == user.id
-      end
-
-      can :destroy, Post do |post|
-        post.author_id == user.id
-      end
     end
 
     # The first argument to `can` is the action you are giving the user
