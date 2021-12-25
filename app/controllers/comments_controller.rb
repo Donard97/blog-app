@@ -7,7 +7,6 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-    @comment.author_id = current_user.id
     @comment.post_id = params[:post_id]
     if @comment.save
       flash[:notice] = 'Comment successfully added!'
@@ -19,10 +18,9 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
-    authorize! :destroy, @comment
     @comment.destroy
-    flash[:succes] = 'Comment was deleted successfully'
-    redirect_to user_post_path(current_user)
+    flash[:notice] = 'Comment Deleted Succefully'
+    redirect_back fallback_location: root_path
   end
 
   private

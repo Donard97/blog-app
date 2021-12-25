@@ -3,9 +3,7 @@ RSpec.feature 'Users Page' do
   feature 'shows users' do
     background do
       visit new_user_session_path
-      @user1 = User.create(name: 'Donard', bio: 'This is my bio',
-                           photo: 'https://eitrawmaterials.eu/wp-content/uploads/2016/09/person-icon.png',
-                           email: 'donardgolaj@gmail.com', password: 'password', confirmed_at: Time.now)
+      @user1 = User.create(name: 'Donard', bio: 'This is my bio', photo: 'https://eitrawmaterials.eu/wp-content/uploads/2016/09/person-icon.png', email: 'donardgolaj@gmail.com', password: 'password', confirmed_at: Time.now)
 
       within 'form' do
         fill_in 'Email', with: @user1.email

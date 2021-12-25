@@ -2,9 +2,7 @@ require 'rails_helper'
 RSpec.feature 'User #Show', type: :feature do
   background do
     visit new_user_session_path
-    @user1 = User.create(name: 'Paka', bio: 'This is my bio',
-                         photo: 'https://steelform.com/wp-content/uploads/2017/03/testimonial-avatar-150x150.jpg',
-                         email: 'oliplichepaka@gmail.com', password: 'password', confirmed_at: Time.now)
+    @user1 = User.create(name: 'Paka', bio: 'This is my bio', photo: 'https://steelform.com/wp-content/uploads/2017/03/testimonial-avatar-150x150.jpg', email: 'oliplichepaka@gmail.com', password: 'password', confirmed_at: Time.now)
 
     within 'form' do
       fill_in 'Email', with: @user1.email
